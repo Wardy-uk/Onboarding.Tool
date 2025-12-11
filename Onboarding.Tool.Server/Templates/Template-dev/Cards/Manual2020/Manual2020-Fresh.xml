@@ -1,0 +1,64 @@
+<template xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" sourcePdf="/global/images/DirectMail/UKMailBlankTemplate/UKMailSpec/UKMailSpecCompiled.pdf">
+    <meta>
+        <palette />
+        <fonts>
+            <font name="Roboto-Bold" />
+            <font name="Roboto-Light" />
+            <font name="Roboto-Bold" />
+            <font name="MyriadPro-Regular" />
+        </fonts>
+    </meta>
+    <document>
+        <canvas name="Page 1" width="220" height="158" mediabox="0,0,220,158" cropbox="5,5,210,148" bleed="0" resourceFilePath="" backgroundColour="" backgroundColourCMYK="" backgroundImagePath="/global/images/DirectMail/UKMailBlankTemplate/UKMailSpec/PageBackgroundCompiled1T637036198663350106.png">
+            <segment id="1" pdfReferences="23|13|0" left="0" top="0" width="220" height="158" crop="false" editable="true" merged="false" logo="false" deleted="false">
+                <image left="0" top="0" width="220" height="158" changed="false" logo="false">/global/images/DirectMail/BuildStyle1GoodrichEstates/build1/white.tif</image>
+            </segment>
+            <segment id="3" pdfReferences="20|10|0" left="0" top="120.4" width="220" height="37.6" crop="false" editable="true" merged="false" logo="false" deleted="false">
+                <image left="0" top="0" width="220" height="37.6" changed="false" logo="false">/global/images/DirectMail/{{ instance }}/colourblockprimary.tif</image>
+            </segment>
+            <segment id="5" pdfReferences="376|370|0" left="{{ logo.card_logo_x }}" top="{{ logo.card_logo_y }}" width="{{ logo.card_logo_width }}" height="{{ logo.card_logo_height }}" crop="false" editable="true" merged="false" logo="false" deleted="false">
+                <image left="0" top="0" width="{{ logo.card_logo_width }}" height="{{ logo.card_logo_height }}" changed="false" logo="false">/global/images/DirectMail/{{ instance }}/{{ logo.name }}</image>
+            </segment>
+            <segment id="17" pdfReferences="0|13|1683218938,0|13|-423842297" left="15" top="130.5" width="130" height="12" crop="false" editable="true" merged="false" logo="false" deleted="false">
+                <text left="0" top="0" font="Roboto-Bold" size="31" cmyk="0,0,0,0" rgb="255,255,255" multiline="true" maxlength="0" align="left" paraspacing="0" letterspacing="0" wordspacing="0" linespacing="0" fonts="Roboto-Bold" sizes="31" richTextEditing="false">FRESH ON THE MARKET</text>
+            </segment>
+        </canvas>
+        <canvas name="Page 2" width="220" height="158" mediabox="0,0,220,158" cropbox="5,5,210,148" bleed="0" resourceFilePath="" backgroundColour="" backgroundColourCMYK="" backgroundImagePath="/global/images/DirectMail/UKMailBlankTemplate/UKMailSpec/PageBackgroundCompiled1T637036198663350106.png">
+            <segment id="9" pdfReferences="23|13|0" left="0" top="0" width="220" height="158" crop="false" editable="false" merged="false" logo="false" deleted="false">
+                <image left="0" top="0" width="220" height="158" changed="false" logo="false">/global/images/DirectMail/BuildStyle1GoodrichEstates/build1/white.tif</image>
+            </segment>
+            <segment id="7" pdfReferences="374|370|0" left="0" top="0" width="134.1" height="123" crop="false" editable="true" merged="false" logo="false" deleted="false">
+                <image left="0" top="0" width="134.1" height="123" changed="false" logo="false">/global/images/DirectMail/FreshontheMarket/ZestPropertyFOTM/GreyBlock.jpg</image>
+            </segment>
+            <segment id="17" pdfReferences="375|370|0" left="0" top="122.9" width="134.1" height="35.1" crop="false" editable="true" merged="false" logo="false" deleted="false">
+                <image left="0" top="0" width="134.1" height="35.1" changed="false" logo="false">/global/images/DirectMail/{{ instance }}/colourblockprimary.tif</image>
+            </segment>
+            <segment id="26" pdfReferences="0|28|-1735135634" left="12.2" top="142.3" width="123.8" height="3" crop="false" editable="true" merged="false" logo="false" deleted="false">
+                <text left="0" top="0" font="Roboto-Light" originalFont="Roboto-Light" size="7" cmyk="0,0,0,0" rgb="255,255,255" multiline="true" maxlength="0" align="Left" paraspacing="0" letterspacing="0" wordspacing="0" linespacing="0" fonts="Roboto-Light" sizes="7" richTextEditing="false">If undelivered, please return to: BriefYourMarket, Brindley House, Outrams Wharf, Little Eaton, DE21 5EL</text>
+            </segment>
+             <segment id="21" pdfReferences="376|370|0" left="{{ logo.card_logo_x }}" top="{{ logo.card_logo_y }}" width="{{ logo.card_logo_width }}" height="{{ logo.card_logo_height }}" crop="false" editable="true" merged="false" logo="false" deleted="false">
+                <image left="0" top="0" width="{{ logo.card_logo_width }}" height="{{ logo.card_logo_height }}" changed="false" logo="false">/global/images/DirectMail/{{ instance }}/{{ logo.name }}</image>
+            </segment>
+            <segment id="41" pdfReferences="0|28|886583715,0|28|1249791311" left="12.2" top="13.7" width="111" height="12" crop="false" editable="true" merged="false" logo="false" deleted="false">
+                <text left="0" top="0" font="Roboto-Bold" size="23" cmyk="26,4,0,82" rgb="34,44,46" multiline="true" maxlength="0" align="Left" paraspacing="0" letterspacing="0" wordspacing="0" linespacing="0" fonts="Roboto-Bold" sizes="23" richTextEditing="false">FRESH ON THE MARKET</text>
+            </segment>
+            <segment id="42" pdfReferences="0|29|-377093995,0|29|1208015296,0|29|512453954,0|29|-599453527,0|29|-595978116" left="12.2" top="29.1" width="108" height="90" crop="false" editable="true" merged="false" logo="false" deleted="false">
+                <text left="0" top="0" font="Roboto-Light" size="21" cmyk="26,4,0,82" rgb="34,44,46" multiline="true" maxlength="0" align="Left" paraspacing="0" letterspacing="0" wordspacing="0" linespacing="1" fonts="Roboto-Light" sizes="21" richTextEditing="false">We have buyers actively looking for properties in your area.&lt;br /&gt;&lt;br /&gt;So if you would like a free valuation please contact our office today and speak to a friendly staff member!</text>
+            </segment>
+            <segment id="19" pdfReferences="0|370|350922762" left="12.2" top="131.6" width="88" height="7" crop="false" editable="true" merged="false" logo="false" deleted="false">
+                <text left="0" top="0" font="Roboto-Light" originalFont="Roboto-Light" size="12" cmyk="0,0,0,0" rgb="255,255,255" multiline="true" maxlength="0" align="Left" paraspacing="0" letterspacing="0" wordspacing="0" linespacing="0" fonts="Roboto-Light" sizes="14" richTextEditing="false">E: {{ branch.sales_email }}</text>
+            </segment>
+            <segment id="20" pdfReferences="0|370|-556705174" left="83" top="131.6" width="40" height="6" crop="false" editable="true" merged="false" logo="false" deleted="false">
+                <text left="0" top="0" font="Roboto-Light" originalFont="Roboto-Light" size="12" cmyk="0,0,0,0" rgb="255,255,255" multiline="true" maxlength="0" align="Left" paraspacing="0" letterspacing="0" wordspacing="0" linespacing="0" fonts="Roboto-Light" sizes="14" richTextEditing="false">T: {{ branch.domestic_number }}</text>
+            </segment>
+            <segment id="47" pdfReferences="374|370|0" left="179" top="12.6" width="27" height="21" crop="false" editable="false" merged="false" logo="false" deleted="false">
+<image left="0" top="0" width="27" height="21" changed="false" logo="false">/global/images/DirectMail/MyAudience/MyAudiencePostMark.jpg</image>
+</segment>
+            <segment id="48" pdfReferences="" left="162.5" top="68.5" width="40" height="30" crop="false" editable="false" merged="false" logo="false" deleted="false" validationExpression="">
+                <velocity left="0" top="0" font="Arial" size="11" cmyk="0,0,0,100" rgb="0,0,0" multiline="true" maxlength="0" align="Left" paraspacing="0" letterspacing="0" wordspacing="0" linespacing="0" fonts="Arial" sizes="8,9,10,11,12,14,16,18,20,24,26,28,36,47,53,72" richTextEditing="false">#if( (! ${Contact.Title}) || (${Contact.Title} == "") || (! ${Contact.LastName}) || (${Contact.LastName} == "") ) Homeowner&lt;br /&gt; #elseif  ( (! ${Contact.Title}) || (${Contact.Title} == "") ) $!{Contact.FirstName} ${Contact.LastName}&lt;br /&gt; #else ${Contact.Title} $!{Contact.FirstName} ${Contact.LastName}&lt;br /&gt; #end#if (  (! ${Contact.PostalAddress.Line1}) || (${Contact.PostalAddress.Line1} == "") ) #else ${Contact.PostalAddress.Line1} &lt;br /&gt; #end #if (  (! ${Contact.PostalAddress.Line2}) || (${Contact.PostalAddress.Line2} == "") ) #else ${Contact.PostalAddress.Line2} &lt;br /&gt; #end #if (  (! ${Contact.PostalAddress.Line3}) || (${Contact.PostalAddress.Line3} == "") ) #else ${Contact.PostalAddress.Line3} &lt;br /&gt; #end
+#if (  (! ${Contact.PostalAddress.Town}) || (${Contact.PostalAddress.Town} == "") ) #else ${Contact.PostalAddress.Town} &lt;br /&gt; #end #if (  (! ${Contact.PostalAddress.PostCode}) || (${Contact.PostalAddress.PostCode} == "") ) #else ${Contact.PostalAddress.PostCode} &lt;br /&gt; #end</velocity>
+            </segment>
+        </canvas>
+    </document>
+</template>

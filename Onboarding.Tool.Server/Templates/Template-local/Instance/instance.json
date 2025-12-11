@@ -1,0 +1,35 @@
+{
+  "EmailComponents": [ 3, 7, 8 ],
+  "ConfigSettings": [
+    {
+      "Name": "BuildYourMarketEnabled",
+      "Value": "True"
+    },
+    {
+      "Name": "BuildYourMarketLettingsEnabled",
+      "Value": "True"
+    },
+    {
+      "Name": "Setting.Build.MaxPostSectors",
+      "Value": "10000"
+    },
+    {
+      "Name": "ScheduledReportsEnabled",
+      "Value": "True"
+    },
+    {
+      "Name": "EmailEditor.DataloftEnabled",
+      "Value": "True"
+    },
+    {
+      "Name": "Feature.Build.Sales.Automation.Enabled",
+      "Value": "True"
+    }
+  ],
+  "DefaultPrintLibraries": [
+    71,
+    72,
+    76
+  ],
+  "QualityAssuranceInstance": 2045
+}

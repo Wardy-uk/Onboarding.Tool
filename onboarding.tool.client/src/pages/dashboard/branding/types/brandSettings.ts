@@ -1,0 +1,202 @@
+import { brandSetting } from "./brandSetting";
+
+export const brandSettings: brandSetting[] = [
+  {
+    key: "bannerWebsite",
+    label: "Website",
+    type: "url",
+    required: true
+  },
+  {
+    key: "companyName",
+    label: "Company Name (Generic)",
+    type: "string",
+    required: true
+  },
+  {
+    key: "registeredName",
+    label: "Registered Company Name",
+    type: "string",
+    required: true
+  },
+  {
+    key: "registeredAddress",
+    label: "Registered Address",
+    type: "string",
+    required: true,
+  },
+  {
+    key: "registeredNumber",
+    label: "Registered Number",
+    type: "string",
+    required: true,
+  },
+  {
+    key: "registeredVATNo",
+    label: "Registered VAT No",
+    type: "string",
+    required: true,
+  },
+  {
+    key: "TwitterURL",
+    label: "Twitter URL",
+    type: "url",
+    required: false
+  },
+  {
+    key: "FacebookURL",
+    label: "Facebook URL",
+    type: "url",
+    required: false
+  },
+  {
+    key: "LinkedinURL",
+    label: "LinkedIn URL",
+    type: "url",
+    required: false
+  },
+  {
+    key: "InstagramURL",
+    label: "Instagram URL",
+    type: "url",
+    required: false
+  },
+  {
+    key: "YoutubeURL",
+    label: "Youtube URL",
+    type: "url",
+    required: false
+  },
+  {
+    key: "theme.colourPrimary",
+    label: "Primary Brand Colour",
+    type: "colour",
+    required: true,
+  },
+  {
+    key: "theme.colourSecondary",
+    label: "Secondary Brand Colour",
+    type: "colour",
+    required: true,
+  },
+  {
+    key: "headerBackground",
+    label: "Header Colour",
+    type: "colour",
+    required: true,
+  },
+  {
+    key: "headerText",
+    label: "Header Text Colour",
+    type: "colour",
+    required: true,
+  },
+  {
+    key: "footerBackground",
+    label: "Footer Colour",
+    type: "colour",
+    required: true,
+  },
+  {
+    key: "footerText",
+    label: "Footer Text Colour",
+    type: "colour",
+    required: true
+  },
+  {
+    key: "mainTextColour",
+    label: "Main Text Colour",
+    type: "colour",
+    required: true,
+  },
+  {
+    key: "CTAText1",
+    label: "Call To Action Text 1",
+    type: "string",
+    required: false
+  },
+  {
+    key: "CTALink1",
+    label: "Call To Action Link 1",
+    type: "url",
+    required: false
+  },
+  {
+    key: "CTAText2",
+    label: "Call To Action Text 2",
+    type: "string",
+    required: false
+  },
+  {
+    key: "CTALink2",
+    label: "Call To Action Link 2",
+    type: "url",
+    required: false
+  },
+  {
+    key: "CTAText3",
+    label: "Call To Action Text 3",
+    type: "string",
+    required: false
+  },
+  {
+    key: "CTALink3",
+    label: "Call To Action Link 3",
+    type: "url",
+    required: false
+  },
+  {
+    key: "CTAText4",
+    label: "Call To Action Text 4",
+    type: "string",
+    required: false
+  },
+  {
+    key: "CTALink4",
+    label: "Call To Action Link 4",
+    type: "url",
+    required: false
+  },
+  {
+    key: "CTAText5",
+    label: "Call To Action Text 5",
+    type: "string",
+    required: false
+  },
+  {
+    key: "CTALink5",
+    label: "Call To Action Link 5",
+    type: "url",
+    required: false
+  },
+  {
+    key: "contactURL",
+    label: "Contact Us URL",
+    type: "url",
+    required: true,
+  },
+  {
+    key: "MainCTALink",
+    label: "Main CTA URL",
+    type: "url",
+    required: true,
+  },
+  {
+    key: "ProductMoreLinkBase",
+    label: "Product More Link Base",
+    type: "url",
+    required: true,
+  },
+  {
+    key: "GoogleAnalytics",
+    label: "Google Analytics Code",
+    type: "string",
+    required: false
+  },
+  {
+    key: "theme.digivalLink",
+    label: "Instant Valuation Link (LeadPro)",
+    type: "url",
+    required: false
+  },
+];

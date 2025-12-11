@@ -1,0 +1,28 @@
+{
+  "ScheduledReports": [
+    {
+      "DefinitionId": 92,
+      "Name": "Weekly Trigger - Statistics - 2020",
+      "Configuration": {
+        "Frequency": 1,
+        "Name": "Weekly Trigger Report"
+      }
+    },
+    {
+      "DefinitionId": 87,
+      "Name": "Weekly Full Message Statistic Report - 2020",
+      "Configuration": {
+        "Frequency": 1,
+        "Name": "Weekly Campaign Summary"
+      }
+    },
+    {
+      "DefinitionId": 73,
+      "Name": "Unsubscribed Report 2020 - Daily",
+      "Configuration": {
+        "Frequency": 1,
+        "Name": "Weekly Unsubscribe Summary"
+      }
+    }
+  ]
+}

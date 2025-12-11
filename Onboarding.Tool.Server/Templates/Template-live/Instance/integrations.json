@@ -1,0 +1,12 @@
+{
+    "Integrations": [
+      {
+        "DefinitionId": 295,
+        "Name": "Property Schema"
+      },
+      {
+        "DefinitionId": 147,
+        "Name": "Vebra Alto (with RelatedObjects)"
+      }
+    ]
+}

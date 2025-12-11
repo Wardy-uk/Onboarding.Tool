@@ -1,0 +1,28 @@
+{
+  "ScheduledReports": [
+    {
+      "DefinitionId": 212,
+      "Name": "**Standard** Trigger Statistics - Weekly",
+      "Configuration": {
+        "Frequency": 1,
+        "Name": "Weekly Trigger Report"
+      }
+    },
+    {
+      "DefinitionId": 215,
+      "Name": "**Standard** Campaign Summary - Weekly",
+      "Configuration": {
+        "Frequency": 1,
+        "Name": "Weekly Campaign Summary"
+      }
+    },
+    {
+      "DefinitionId": 218,
+      "Name": "**Standard** Unsubscribe Summary - Weekly",
+      "Configuration": {
+        "Frequency": 1,
+        "Name": "Weekly Unsubscribe Summary"
+      }
+    }
+  ]
+}

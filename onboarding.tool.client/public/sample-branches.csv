@@ -1,0 +1,2 @@
+name,isDefault,salesEmail,salesPhone,lettingsEmail,lettingsPhone,address1,address2,address3,town,postCode1,postCode2
+My Branch,true,sales@example.com,+447999999999,lettings@example.com,+447999999999,1 Street,,,Town,XX0,0XX

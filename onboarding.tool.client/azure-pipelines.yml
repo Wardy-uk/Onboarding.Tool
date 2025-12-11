@@ -1,0 +1,47 @@
+name: $(BuildDefinitionName)_${{ parameters.environment }}_$(SourceBranchName)_$(Date:yyyy.MM.dd).$(BuildID)
+
+trigger:
+  paths:
+    include:
+      - onboarding.tool.client
+
+pool:
+  name: Core
+
+parameters:
+  - name: environment
+    displayName: Build Environment
+    type: string
+    default: 'dev'
+    values:
+      - dev
+      - live
+
+jobs:
+  - job: Build
+    displayName: Build ${{ parameters.environment }}
+    steps:
+      - checkout: self
+      - task: NodeTool@0
+        inputs:
+          versionSpec: '22.x'
+      - script: |
+          copy /Y "$(Build.SourcesDirectory)\onboarding.tool.client\.env.${{ parameters.environment }}" "$(Build.SourcesDirectory)\onboarding.tool.client\.env"
+        displayName: 'Copy environment .env file'
+        workingDirectory: $(Build.SourcesDirectory)\onboarding.tool.client
+      - script: |
+          npm install
+        displayName: 'Install Dependencies'
+        workingDirectory: $(Build.SourcesDirectory)\onboarding.tool.client
+      - script: |
+          call npm run build
+          move "$(Build.SourcesDirectory)\onboarding.tool.client\dist" "$(Build.StagingDirectory)\build"
+          dir "$(Build.StagingDirectory)\build"
+        displayName: 'Run Build'
+        workingDirectory: $(Build.SourcesDirectory)\onboarding.tool.client
+      - task: PublishBuildArtifacts@1
+        displayName: 'Publish Build'
+        inputs:
+          PathtoPublish: '$(Build.StagingDirectory)\build'
+          ArtifactName: 'OnboardingUi'
+          publishLocation: 'Container'

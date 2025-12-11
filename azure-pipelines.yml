@@ -1,0 +1,94 @@
+name: '$(BuildDefinitionName)_$(SourceBranchName)_$(Date:yyyy.MM.dd).$(BuildID)'
+trigger:
+  paths:
+    exclude:
+      - onboarding.tool.client
+
+pool:
+  name: Core
+  demands:
+    - DotNetFramework
+    - msbuild
+    - visualstudio
+    - vstest
+variables:
+  solution: 'Onboarding.Tool.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+steps:
+  - task: UseDotNet@2
+    displayName: Use .NET Core SDK
+    inputs:
+      packageType: sdk
+      version: 8.x
+      installationPath: $(Agent.ToolsDirectory)/dotnet
+  - task: NodeTool@0
+    displayName: 'Use Node.js 20.x'
+    inputs:
+      versionSpec: 20.x
+  - task: npmAuthenticate@0
+    displayName: 'Add NPM token'
+    inputs:
+      workingFile: 'onboarding.tool.client\.npmrc'
+  - task: DeleteFiles@1
+    displayName: Delete old Nuget Packages
+    inputs:
+      SourceFolder: $(Build.Repository.LocalPath)/NuGetPackager
+      Contents: '*.nupkg'
+  - powershell: |
+      $bym_version=$(Get-Date -Format yyyy.MM.dd);
+      $bym_version_id = $bym_version + "." + $(Build.BuildId)
+      Write-Host "##vso[task.setvariable variable=bym.version]$bym_version_id"
+    displayName: Create Version Number for artifacts
+  - script: >
+      curl -Lo $(Agent.TempDirectory)/sbom-tool.exe
+      https://github.com/microsoft/sbom-tool/releases/latest/download/sbom-tool-win-x64.exe
+
+      $(Agent.TempDirectory)/sbom-tool.exe generate -b
+      $(Build.ArtifactStagingDirectory) -bc $(Build.SourcesDirectory) -li true
+      -pm true -pn "Nurtur Onboarding Tool" -pv $(bym.version) -ps Nurtur
+      -nsb https://sbom.nurtur.tech -V Verbose
+    displayName: Generate SBOM
+  - script: >-
+      \\BYM-AAPP01\SBomCli\sbomcli.exe SpdxToSql -i
+      $(Build.ArtifactStagingDirectory)\_manifest\spdx_2.2\manifest.spdx.json -p
+      "Nurtur Onboarding Tool" -v $(bym.version)
+    displayName: Convert SPDX to SQL
+  - task: PowerShell@2
+    displayName: Update Version Numbers
+    inputs:
+      targetType: filePath
+      filePath: ./UpdateVersionNumbers.ps1
+      failOnStderr: true
+  - task: DotNetCoreCLI@2
+    inputs:
+      command: restore
+      projects: Onboarding.Tool.sln
+      feedsToUse: select
+      vstsFeed: 5ebe8597-a89f-4e5b-bde8-d18d95de1c73
+    displayName: Restore
+  - task: DotNetCoreCLI@2
+    inputs:
+      command: build
+      projects: Onboarding.Tool.Server\Onboarding.Tool.Server.csproj
+      arguments:  -c $(BuildConfiguration)
+    displayName: Build Onboarding.Tool
+  - task: DotNetCoreCLI@2
+    inputs:
+      command: 'publish'
+      publishWebProjects: false
+      projects: 'Onboarding.Tool.Server\Onboarding.Tool.Server.csproj'
+      arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)/Onboarding.Tool'
+      zipAfterPublish: false
+    displayName: 'Publish Onboarding.Tool.Server'
+  - task: ArchiveFiles@2
+    displayName: 'Archive Onboarding.Tool for Deployment'
+    inputs:
+      rootFolderOrFile: '$(Build.ArtifactStagingDirectory)/Onboarding.Tool/Onboarding.Tool.Server'
+      includeRootFolder: false
+      archiveFile: '$(Build.ArtifactStagingDirectory)/Onboarding.Tool.$(bym.version).zip'
+  - task: PublishBuildArtifacts@1
+    displayName: 'Publish Onboarding.Tool Artifacts'
+    inputs:
+      PathtoPublish: '$(Build.ArtifactStagingDirectory)/Onboarding.Tool.$(bym.version).zip'
+      ArtifactName: 'Onboarding.Tool'

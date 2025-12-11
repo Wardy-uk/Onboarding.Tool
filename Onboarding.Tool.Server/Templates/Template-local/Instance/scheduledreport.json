@@ -1,0 +1,29 @@
+{
+  "ScheduledReports":
+  [
+    {
+      "DefinitionId": 1,
+      "Name": "test",
+      "Configuration": {
+        "Frequency": 1,
+        "Name": "Weekly Trigger Report"
+      }
+    },
+    {
+      "DefinitionId": 2,
+      "Name": "Unsubscribed Report 2020 - Daily",
+      "Configuration": {
+        "Frequency": 1,
+        "Name": "Weekly Campaign Summary"
+      }
+    },
+    {
+      "DefinitionId": 3,
+      "Name": "copy Unsubscribed Report 2020 - Daily",
+      "Configuration": {
+        "Frequency": 1,
+        "Name": "Weekly Unsubscribe Summary"
+      }
+    }
+  ]
+}

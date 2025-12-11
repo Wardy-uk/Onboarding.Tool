@@ -1,0 +1,18 @@
+[
+    {
+        "Category": "Auto2020",
+        "Title": "Sold Near You - Auto2020",
+        "GlobalCodeSuffix": "SNYA",
+        "TypeId": 3,
+        "PriceModelId": 96,
+        "Keywords": "Auto2020",
+        "PrintProviderId": 24,
+        
+        "StockIds": "2",
+        "DeliveryMethodIds": "2",
+        "PaperTypeIds": "1",
+        "LaminationIds": "1",
+
+        "Path": "C:\\Users\\Aaron.Vinall\\source\\repos\\Onboarding.Tool\\Template\\Cards\\Auto2020\\Auto2020-Sold.xml"
+    }
+]

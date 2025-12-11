@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Onboarding.Tool.Server/Dockerfile
+    container_name: onboarding_tool_server
+    ports:
+      - "8080:8080"           # Map backend port 80 inside container to localhost:8080
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    networks:
+      - onboarding_net
+
+  frontend:
+    build:
+      context: ./onboarding.tool.client
+      dockerfile: Dockerfile     # Assuming Dockerfile is in onboarding.tool.client root
+    container_name: onboarding_tool_client
+    ports:
+      - "3000:80"          # Map frontend port (adjust as needed)
+    depends_on:
+      - backend
+    networks:
+      - onboarding_net
+
+networks:
+  onboarding_net:
+    driver: bridge
